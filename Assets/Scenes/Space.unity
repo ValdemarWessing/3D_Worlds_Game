@@ -804,7 +804,11 @@ PrefabInstance:
       objectReference: {fileID: 1298969451}
     - target: {fileID: 5551995889608776725, guid: 8d909604f6b7442f3848ad437e54a2f3, type: 3}
       propertyPath: speedMult
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780218386133232628, guid: 8d909604f6b7442f3848ad437e54a2f3, type: 3}
+      propertyPath: Damping.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6041802494888537703, guid: 8d909604f6b7442f3848ad437e54a2f3, type: 3}
       propertyPath: m_Name
