@@ -7,20 +7,34 @@ Through the story the player will engage in dialogue with NPCs, sail a boat, fly
 ----------------------------------------------------------------
 
 Mouse and keyboard:
+
 E – interact
+
 F – leave vehicle and activate or deactivate gun
+
 Space – progress conversation
+
 Q / E – roll spaceship
+
 WASD – walk
+
 Shift – sprint
 
+
 Controller:
+
 West button – interact
+
 East button – leave vehicle and activate or deactivate gun
+
 South button – progress conversation
+
 RB/LB – roll spaceship
+
 Right stick – walk
+
 RT – sprint
+
 
 ----------------------------------------------------------------
 
