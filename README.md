@@ -21,6 +21,7 @@ WASD – walk
 Shift – sprint
 
 
+
 Controller:
 
 West button – interact
@@ -39,13 +40,21 @@ RT – sprint
 ----------------------------------------------------------------
 
 Most important scripts:
+
 DialogueSystem – Manages NPC conversations
+
 Interactor – Handles player interaction input and invokes IInteractable behavior on objects.
+
 IInteractable – Interface defining interactable objects (pickups, tents, text triggers).
+
 FirstPersonController – Player walking controller extended with audio, camera and input integration (customized beyond stock Unity controller).
+
 PlayerSpaceShip – Flight/ship controller for flying movement and controls.
+
 BoatControls – Sailing controller for boat movement.
+
 Gunscript – Shooting mechanics.
+
 AiTarget – NPC movement
 
 ----------------------------------------------------------------
