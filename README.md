@@ -47,7 +47,7 @@ Interactor – Handles player interaction input and invokes IInteractable behavi
 
 IInteractable – Interface defining interactable objects (pickups, tents, text triggers).
 
-FirstPersonController – Player walking controller extended with audio, camera and input integration (customized beyond stock Unity controller).
+FirstPersonController – Player walking controller extended with audio and additional input integration (customized beyond stock Unity controller).
 
 PlayerSpaceShip – Flight/ship controller for flying movement and controls.
 
