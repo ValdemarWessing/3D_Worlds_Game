@@ -18,7 +18,11 @@ Q / E – roll spaceship
 
 WASD – walk
 
+Mouse - look
+
 Shift – sprint
+
+Left click - shoot
 
 --------------------------------------------------------------
 
@@ -32,10 +36,13 @@ South button – progress conversation
 
 RB/LB – roll spaceship
 
-Right stick – walk
+Left stick – walk
 
-RT – sprint
+Right stick - look
 
+LT – sprint
+
+RT - shoot
 
 ----------------------------------------------------------------
 
