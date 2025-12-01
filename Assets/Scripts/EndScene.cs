@@ -24,12 +24,15 @@ public class EndScene : MonoBehaviour
             Debug.LogError("sceneName is empty.");
             yield break;
         }
+        
+        
 
         float startAlpha = panel.color.a;
         float elapsed = 0f;
 
         while (elapsed < fadeDuration)
         {
+            // make scene darker
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / fadeDuration);
             Color c = panel.color;
@@ -37,7 +40,8 @@ public class EndScene : MonoBehaviour
             panel.color = c;
             yield return null;
         }
-
+        
+        // load the next scene
         SceneManager.LoadScene(sceneName);
     }
 }

@@ -72,6 +72,7 @@ public class BoatControls : MonoBehaviour, IInteractable
     }
     private IEnumerator ShowMissingKeyRoutine()
     {
+        // Show missing key text for 2 seconds
         if (missingKeyText == null) yield break;
         missingKeyText.SetActive(true);
         yield return new WaitForSeconds(2f);
@@ -107,7 +108,7 @@ public class BoatControls : MonoBehaviour, IInteractable
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 1.5f);
     }
 
-    // --- Trigger logic ---
+    // Exit boat at designated zones
 
     private void OnTriggerStay(Collider other)
     {

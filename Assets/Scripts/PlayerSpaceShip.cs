@@ -34,6 +34,7 @@ public class PlayerSpaceShip : MonoBehaviour, IInteractable
 
     void Update()
     {
+        // input moves to local variables
         Debug.Log($"move:{input.move} look:{input.look} roll:{input.roll}");
     
         verticalMove   = input.move.y;
@@ -42,10 +43,11 @@ public class PlayerSpaceShip : MonoBehaviour, IInteractable
         mouseInputX = input.look.x;
         mouseInputY = input.look.y;
 
-        rollInput = input.roll;   // You must add this to your input actions
+        rollInput = input.roll;  
     }
     public void Interact()
     {
+        // Enter the ship
         Debug.Log("Interact");
         if (!enterShip)
         {
@@ -61,6 +63,7 @@ public class PlayerSpaceShip : MonoBehaviour, IInteractable
     {
         if (enterShip)
         {
+            // Move the spaceship
             spaceShipLight.enabled = true;
             spaceShipRb.AddForce(spaceShipRb.transform.TransformDirection(Vector3.forward) * verticalMove * speedMult, ForceMode.VelocityChange);
             spaceShipRb.AddForce(spaceShipRb.transform.TransformDirection(Vector3.right) * horizontalMove * speedMult, ForceMode.VelocityChange);

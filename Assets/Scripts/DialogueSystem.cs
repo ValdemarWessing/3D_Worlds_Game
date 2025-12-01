@@ -26,6 +26,7 @@ public class DialogueSystem : MonoBehaviour, IInteractable
     
     private void Awake()
     {
+        // safety: ensure audio source exists if clip provided
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
@@ -37,6 +38,7 @@ public class DialogueSystem : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        // start the dialogue sequence
         if (isTalking) return;
 
         StartCoroutine(DisplayDialogue());
@@ -61,11 +63,13 @@ public class DialogueSystem : MonoBehaviour, IInteractable
     
     private IEnumerator DisplayDialogue()
     {
+        // show the dialogue panel
         isTalking = true;
         dialoguePanel.SetActive(true);
         
         if (hadConversation)
         {
+            // if already had conversation, show a single line
             StartTalkingSound();
             nameText.text = npcName;
             dialogueText.text = "You should get you memory buffer checked, we've been through this already.";
@@ -73,6 +77,7 @@ public class DialogueSystem : MonoBehaviour, IInteractable
             yield return WaitForAdvance();
             {
                 ClearText();
+                audioSource.Stop();
             }
             dialoguePanel.SetActive(false);
             player.SetActive(true);
@@ -82,6 +87,7 @@ public class DialogueSystem : MonoBehaviour, IInteractable
         
         for (int i = 0; i < npcDialogues.Length; i++)
         {
+            // NPC speaks
             nameText.text = npcName;
             dialogueText.text = npcDialogues[i];
             StartTalkingSound();
@@ -94,6 +100,7 @@ public class DialogueSystem : MonoBehaviour, IInteractable
 
             if (i < playerDialogues.Length)
             {
+                // Player responds
                 nameText.text = playerName;
                 dialogueText.text = playerDialogues[i];
                 yield return WaitForAdvance();

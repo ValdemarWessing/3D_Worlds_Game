@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
+    // Singleton instance
     public static GameState Instance { get; private set; }
 
     private readonly Dictionary<string, bool> flags = new Dictionary<string, bool>();
+    
+    
     public event Action<string, bool> OnFlagChanged;
 
     void Awake()

@@ -21,11 +21,6 @@ public class Gunscript : MonoBehaviour
     private bool gunsActive = false;
     
     public StarterAssetsInputs inputSource;
-    
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    // Update is called once per frame
 
     void Start()
     {
@@ -38,6 +33,7 @@ public class Gunscript : MonoBehaviour
     
     private void HandleFlagChanged(string key, bool value)
     {
+        // Handle gun pickup
         if (key == "GunPickUp" && true)
         {
             hasGun = true;
@@ -47,6 +43,7 @@ public class Gunscript : MonoBehaviour
    
     void Update()
     {
+        // Toggle gun visibility
         if (hasGun && !gunsActive && inputSource != null && inputSource.back)
         {
             gunModel.SetActive(true);
@@ -62,6 +59,7 @@ public class Gunscript : MonoBehaviour
             inputSource.back = false;
         }
         
+        // Shooting mechanism
         if (inputSource.shoot && Time.time >= nextFire && hasGun && gunsActive)
         {
             nextFire = Time.time + 1f / fireRate;
@@ -73,22 +71,27 @@ public class Gunscript : MonoBehaviour
 
     void Shoot()
     {
+        // Play muzzle flash and shoot sound
         muzzleFlash.Play();
         shootSound.Play();
         RaycastHit hit;
+        // Raycast to detect hits
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
+                // Apply damage to the target
                 target.TakeDamage(damage);
             }
             if (hit.rigidbody != null)
             {
+                // Apply force to rigidbodies
                 hit.rigidbody.AddForce(-hit.normal * 50f);
             }
             
+            // Instantiate impact effect at hit point
             GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGo, 2f);
           

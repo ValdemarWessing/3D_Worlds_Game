@@ -11,6 +11,7 @@ public class GoodbyeLetter : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        // Show the goodbye letter
         if (GameState.Instance == null) return;
 
         if (!isShowing)

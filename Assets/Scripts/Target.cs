@@ -2,9 +2,6 @@ using UnityEngine;
 using System.Collections;
 public class Target : MonoBehaviour
 {
-    //public Material newMaterialRef;
-
-    
     public float health = 50f;
     
     public void TakeDamage(float amount)
@@ -12,7 +9,6 @@ public class Target : MonoBehaviour
         health -= amount;
         if (health <= 0f)
         {
-            //GetComponent<Renderer>().material = newMaterialRef;
             StartCoroutine(DieAfterDelay());
         }
         IEnumerator DieAfterDelay()

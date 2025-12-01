@@ -26,8 +26,6 @@ public class TextActivator : MonoBehaviour
         {
             StartCoroutine(TimeToSleep());
         }
-        
-       
     }
 
     IEnumerator ShowGunText()
