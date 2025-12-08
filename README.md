@@ -67,3 +67,9 @@ AiTarget – NPC movement
 ----------------------------------------------------------------
 
 The game was build in UNITY 6.000.2.6f2
+----------------------------------------------------------------
+
+All assets used are CC0
+except spaceship & lighouse wich is CC atribution
+Spaceship made by: SomeGuyUsingBlender, https://skfb.ly/oCWvC
+Lighhouse made by: jonnysniper41, https://skfb.ly/6UYME
